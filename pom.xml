@@ -4,12 +4,18 @@
 
     <groupId>io.basestar</groupId>
     <artifactId>freemarker-doclet</artifactId>
-    <version>1.1.0</version>
+    <version>1.5.0</version>
     <packaging>jar</packaging>
+
+    <inceptionYear>2020</inceptionYear>
+    <organization>
+        <name>Basestar.IO</name>
+        <url>https://github.com/basestar</url>
+    </organization>
 
     <name>freemarker-doclet</name>
     <description>A Doclet for using FreeMarker with JavaDoc</description>
-    <url>https://github.com/diogoko/freemarker-doclet</url>
+    <url>https://github.com/basestar/freemarker-doclet</url>
 
     <licenses>
         <license>
@@ -25,14 +31,26 @@
         </developer>
     </developers>
 
+    <contributors>
+        <contributor>
+            <name>Matthew Evans</name>
+            <email>basestar@arcneon.com</email>
+            <url>https://github.com/arcneon</url>
+            <roles>
+                <role>contributor</role>
+            </roles>
+            <timezone>Europe/London</timezone>
+        </contributor>
+    </contributors>
+
     <distributionManagement>
         <snapshotRepository>
-            <id>github</id>
-            <url>https://maven.pkg.github.com/basestar/freemarker-doclet</url>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
         <repository>
-            <id>github</id>
-            <url>https://maven.pkg.github.com/basestar/freemarker-doclet</url>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
         </repository>
     </distributionManagement>
 
@@ -151,11 +169,16 @@
                     </execution>
                 </executions>
             </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-gpg-plugin</artifactId>
-                <version>1.5</version>
+                <version>1.6</version>
+                <configuration>
+                    <gpgArguments>
+                        <arg>--pinentry-mode</arg>
+                        <arg>loopback</arg>
+                    </gpgArguments>
+                </configuration>
                 <executions>
                     <execution>
                         <id>sign-artifacts</id>

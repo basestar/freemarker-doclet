@@ -2,6 +2,8 @@
 
 A [Doclet](https://en.wikipedia.org/wiki/Doclet) for using [FreeMarker](http://freemarker.org/) with [JavaDoc](https://en.wikipedia.org/wiki/Javadoc). It provides all data collected by JavaDoc in a [RootDoc](https://docs.oracle.com/javase/7/docs/jdk/api/javadoc/doclet/com/sun/javadoc/RootDoc.html) instance to a template whose output is directed to a file.
 
+**Note:** Forked to add Java 1.5 support on assumption that the original is no longer maintained.
+
 ## Usage
 
 This doclet accepts the following parameters:
